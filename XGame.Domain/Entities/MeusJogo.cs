@@ -2,7 +2,7 @@
 
 namespace XGame.Domain.Entities
 {
-    public class MeusJogos
+    public class MeusJogo
     {
         public Guid Id { get; set; }
         public JogoPlataforma JogoPlataforma { get; set; }
