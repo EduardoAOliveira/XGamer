@@ -15,5 +15,7 @@ namespace XGame.Domain.Entities
         public string Senha { get; set; }
 
         public EnumSituacaoJogador Status { get; set; }
+
+
     }
 }
