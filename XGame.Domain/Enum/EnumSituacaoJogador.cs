@@ -4,6 +4,7 @@
     {
         EmAndamento = 0,
         Ativo = 1,
-        Bloqueado = 2        
+        Bloqueado = 2,
+        EmAnalise = 3
     }
 }
