@@ -1,4 +1,7 @@
-﻿namespace XGame.Domain.Arguments.Jogador
+﻿using System;
+using XGame.Domain.Entities;
+
+namespace XGame.Domain.Arguments.Jogador
 {
     public class AutenticarJogadorResponse
     {

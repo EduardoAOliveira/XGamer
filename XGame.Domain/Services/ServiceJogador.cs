@@ -37,7 +37,43 @@ namespace XGame.Domain.Services
 
         public AlterarJogadorResponse AdicionarJogador(AlterarJogadorRequest request)
         {
-            throw new NotImplementedException();
+            if (request == null)
+            {
+                AddNotification("AlterarJogadorRequest", Message.X0_E_OBRIGATORIA.ToFormat("AlterarJogadorRequest"));
+            }
+
+            Jogador jogador = _repositoryJogador.ObterJogadorId(request.Id);
+
+            if (jogador == null)
+            {
+                AddNotification("Id", Message.DADOS_NAO_ENCONTRADOS);
+                return null;
+            }
+
+            var nome = new Nome(request.PrimeiroNome, request.UltimoNome);
+            var email = new Email(request.Email);
+
+            jogador.AlterarJogador(nome, email);
+
+            AddNotifications(jogador, email); // Adiciona as notificações das validações no service para retorno.
+
+            if (IsInvalid())
+            {
+                return null;
+            }
+
+            _repositoryJogador.AlterarJogador(jogador);
+
+            //Forma convencional.
+            //AutenticarJogadorResponse response = new AutenticarJogadorResponse();
+
+            //response.Email = jogador.Email.Endereco;
+            //response.PrimeiroNome = jogador.Nome.PrimeiroNome;
+            //response.Status = (int)jogador.Status;
+
+            //return response;
+
+            return (AlterarJogadorResponse)jogador; // Conversão explicita.
         }
 
         public AutenticarJogadorResponse AutenticarJogador(AutenticarJogadorRequest request)

@@ -8,6 +8,9 @@ using XGame.Domain.ValueObjects;
 
 namespace XGame.Domain.Entities
 {
+    /// <summary>
+    /// Classe Jogador se auto valida e controla suas notificações sem utilizar exception.
+    /// </summary>
     public class Jogador : Notifiable
     {
         public Jogador(Email email, string senha)
@@ -16,7 +19,6 @@ namespace XGame.Domain.Entities
             Senha = senha;
 
             new AddNotifications<Jogador>(this).IfNullOrInvalidLength(x => x.Senha, 6, 32, "A senha deve ter entre 6 a 32 caracteres");
-
         }
 
         public Jogador(Nome nome, Email email, string senha)
@@ -35,9 +37,17 @@ namespace XGame.Domain.Entities
             }
 
             AddNotifications(nome, email);
-
         }
+        public void AlterarJogador(Nome nome, Email email)
+        {
+            Nome = nome;
+            Email = email;
 
+            new AddNotifications<Jogador>(this)
+                .IfFalse(Status == EnumSituacaoJogador.Ativo, "Só é possivel alterar o jogadores ativos"); // validação de primeiro nome. 
+ 
+            AddNotifications(nome, email);
+        }
         public Guid Id { get; private set; }
 
         public Nome Nome { get; private set; }

@@ -15,7 +15,7 @@ namespace XGame.Domain.Arguments.Jogador
             return new AdicionarJogadorResponse()
             {
                 Id = entidade.Id,
-                Message = "Operação realizada com sucesso"
+                Message = Resources.Message.OPERACAO_REALIZADA_COM_SUCESSO
             };
         }
     }
