@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XGame.AppConsole", "XGame.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XGame.Infrastructure", "XGame.Infrastructure\XGame.Infrastructure.csproj", "{96EFB527-F72E-447A-B4D5-1721B4F0D771}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XGame.IoC", "XGame.IoC\XGame.IoC.csproj", "{C2137D00-E755-4897-AC92-BF8DBCE5971D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XGame.Api", "XGame.Api\XGame.Api.csproj", "{1C7478B0-D33D-413F-B3EE-EAFB68662414}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{96EFB527-F72E-447A-B4D5-1721B4F0D771}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96EFB527-F72E-447A-B4D5-1721B4F0D771}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96EFB527-F72E-447A-B4D5-1721B4F0D771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2137D00-E755-4897-AC92-BF8DBCE5971D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2137D00-E755-4897-AC92-BF8DBCE5971D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2137D00-E755-4897-AC92-BF8DBCE5971D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2137D00-E755-4897-AC92-BF8DBCE5971D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C7478B0-D33D-413F-B3EE-EAFB68662414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C7478B0-D33D-413F-B3EE-EAFB68662414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C7478B0-D33D-413F-B3EE-EAFB68662414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C7478B0-D33D-413F-B3EE-EAFB68662414}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
