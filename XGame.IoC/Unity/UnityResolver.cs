@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Web.Http.Dependencies;
-using Unity;
-using Unity.Exceptions;
 
 namespace XGame.IoC.Unity
 {

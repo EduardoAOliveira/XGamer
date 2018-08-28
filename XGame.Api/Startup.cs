@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNet.WebApi.Extensions.Compression.Server;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
+using Microsoft.Practices.Unity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
 using System;
 using System.Net.Http.Extensions.Compression.Core.Compressors;
 using System.Web.Http;
-using Unity;
 using XGame.Api.Security;
 using XGame.IoC.Unity;
 
@@ -22,13 +22,9 @@ namespace XGame.Api
             //Swagger
             SwaggerConfig.Register(config);
 
-            // Configure Dependency Injection
-            var container = new UnityContainer();
-            DependencyResolver.Resolve(container);
-            config.DependencyResolver = new UnityResolver(container);
 
             ConfigureWebApi(config);
-            ConfigureOAuth(app, container);
+            
 
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
@@ -37,6 +33,12 @@ namespace XGame.Api
 
         public static void ConfigureWebApi(HttpConfiguration config)
         {
+            // Configure Dependency Injection
+            var container = new UnityContainer();
+            DependencyResolver.Resolve(container);
+            config.DependencyResolver = new UnityResolver(container);
+            //ConfigureOAuth(app, container);
+
             // Remove o XML
             var formatters = config.Formatters;
             formatters.Remove(formatters.XmlFormatter);

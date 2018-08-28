@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using XGame.Infrastructure.Persistence.Map;
+using System.Data.SqlClient;
 
 namespace XGame.Infrastructure.Transaction
 {
@@ -16,8 +13,8 @@ namespace XGame.Infrastructure.Transaction
             _context = context;
         }
         public void Commit()
-        {
-            throw new NotImplementedException();
+        {           
+            _context.SaveChanges();
         }
     }
 }

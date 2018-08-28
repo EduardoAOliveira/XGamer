@@ -6,7 +6,7 @@ namespace XGame.Infrastructure.Persistence.Map
 {
     public class XGameContext : DbContext
     {
-        public XGameContext() : base("XGameConnectionString")
+        public XGameContext() : base("XGame")
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled   = false;
