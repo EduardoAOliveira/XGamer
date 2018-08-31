@@ -36,5 +36,20 @@ namespace XGame.Api.Controllers
                 throw;
             }
         }
+        [Route("Listar")]
+        [HttpGet]
+        public async Task<HttpResponseMessage> Listar()
+        {
+            try
+            {
+                var response = _serviceJogador.ListarJogador();
+                return await ResponseAsync(response, _serviceJogador);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

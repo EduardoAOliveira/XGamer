@@ -118,8 +118,8 @@ namespace XGame.Domain.Services
 
         public IEnumerable<JogadorResponse> ListarJogador()
         {
-            return _repositoryJogador.Listar().Select(Jogador => (JogadorResponse)Jogador).ToList(); // Utilizando a Interface base do Repositorio, codigo mais simples.
-            //return _repositoryJogador.ListarJogador().ToList().Select(Jogador => (JogadorResponse)Jogador).ToList(); // Conversão explicita e lista de jogadores no response.
+            //return _repositoryJogador.Listar().Select(x => new JogadorResponse() { Id= x.Id, Email = x.Email.Endereco, NomeCompleto = x.NomeCompleto(), PrimeiroNome =  x.Nome.PrimeiroNome, UltimoNome = x.Senha}); // Utilizando a Interface base do Repositorio, codigo mais simples.
+            return _repositoryJogador.Listar().ToList().Select(Jogador => (JogadorResponse)Jogador).ToList(); // Conversão explicita e lista de jogadores no response.
         }
 
         public ResponseBase ExcluirJogador(Guid Id)

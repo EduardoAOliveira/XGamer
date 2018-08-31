@@ -14,6 +14,10 @@ namespace XGame.Domain.Entities
     /// </summary>
     public class Jogador : EntityBase
     {
+        public Jogador()
+        {
+
+        }
         public Jogador(Email email, string senha)
         {
             Email = email;
