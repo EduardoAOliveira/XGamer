@@ -17,6 +17,5 @@ namespace XGame.Domain.Interfaces.Services
         IEnumerable<JogadorResponse> ListarJogador();
 
         ResponseBase ExcluirJogador(Guid Id);
-
     }
 }

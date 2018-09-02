@@ -59,11 +59,17 @@
     <Compile Include="Migrations\201808251453542_MapeandoAPlataforma.Designer.cs">
       <DependentUpon>201808251453542_MapeandoAPlataforma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808312304108_AdicionandoOJogo.cs" />
+    <Compile Include="Migrations\201808312304108_AdicionandoOJogo.Designer.cs">
+      <DependentUpon>201808312304108_AdicionandoOJogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Persistence\Map\MapJogo.cs" />
     <Compile Include="Persistence\Map\MapPlataforma.cs" />
     <Compile Include="Persistence\Map\MapJogador.cs" />
     <Compile Include="Persistence\Map\XGameContext.cs" />
     <Compile Include="Persistence\Repositories\Base\RepositoryBase.cs" />
+    <Compile Include="Persistence\Repositories\RepositoryJogo.cs" />
     <Compile Include="Persistence\Repositories\RepositoryJogador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transaction\IUnitOfWorkcs.cs" />
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808251453542_MapeandoAPlataforma.resx">
       <DependentUpon>201808251453542_MapeandoAPlataforma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808312304108_AdicionandoOJogo.resx">
+      <DependentUpon>201808312304108_AdicionandoOJogo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

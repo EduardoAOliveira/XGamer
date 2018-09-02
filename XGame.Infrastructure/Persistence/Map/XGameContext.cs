@@ -13,7 +13,7 @@ namespace XGame.Infrastructure.Persistence.Map
         }
         public IDbSet<Jogador> Jogador { get; set; }
 
-        //public IDbSet<Jogo> Jogo { get; set; }
+        public IDbSet<Jogo> Jogo { get; set; }
         public IDbSet<Plataforma> Plataforma { get; set; }      
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

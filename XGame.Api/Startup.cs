@@ -22,9 +22,14 @@ namespace XGame.Api
             //Swagger
             SwaggerConfig.Register(config);
 
+            // Configure Dependency Injection
+            var container = new UnityContainer();
+            DependencyResolver.Resolve(container);
+            config.DependencyResolver = new UnityResolver(container);
+            ConfigureOAuth(app, container);
 
             ConfigureWebApi(config);
-            
+           
 
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
@@ -33,11 +38,6 @@ namespace XGame.Api
 
         public static void ConfigureWebApi(HttpConfiguration config)
         {
-            // Configure Dependency Injection
-            var container = new UnityContainer();
-            DependencyResolver.Resolve(container);
-            config.DependencyResolver = new UnityResolver(container);
-            //ConfigureOAuth(app, container);
 
             // Remove o XML
             var formatters = config.Formatters;
@@ -76,7 +76,7 @@ namespace XGame.Api
             OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
+                TokenEndpointPath = new PathString("/Gettoken"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromHours(2),
                 Provider = new AuthorizationProvider(container)
             };

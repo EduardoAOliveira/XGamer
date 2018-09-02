@@ -22,16 +22,13 @@ namespace XGame.IoC.Unity
             container.RegisterType<INotifiable, Notifiable>(new HierarchicalLifetimeManager());
 
             //Serviço de Domain
-            //container.RegisterType(typeof(IServiceBase<,>), typeof(ServiceBase<,>));
-
-            container.RegisterType<IServiceJogador, ServiceJogador>(new HierarchicalLifetimeManager());
-            //container.RegisterType<IServiceJogo, ServiceJogo>(new HierarchicalLifetimeManager());
+            container.RegisterType<IServiceJogador, ServiceJogador>(new HierarchicalLifetimeManager()); // Identificação da interface com a classe concreta.
+            container.RegisterType<IServiceJogo, ServiceJogo>(new HierarchicalLifetimeManager());
 
             //Repository
             container.RegisterType(typeof(IRepositoryBase<,>), typeof(RepositoryBase<,>));
-
             container.RegisterType<IRepositoryJogador, RepositoryJogador>(new HierarchicalLifetimeManager());
-            //container.RegisterType<IRepositoryJogo, RepositoryJogo>(new HierarchicalLifetimeManager());
+            container.RegisterType<IRepositoryJogo, RepositoryJogo>(new HierarchicalLifetimeManager());
                        
         }
     }
